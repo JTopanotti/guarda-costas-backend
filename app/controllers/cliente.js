@@ -5,7 +5,7 @@ const pool = new Pool({
 });
 
 module.exports = function(){
-    this.listUsuarios = async (req, res) => {
+    var listUsuarios = async (req, res) => {
        try {
          const client = await pool.connect();
          const result = await client.query('SELECT * FROM usuarios');
