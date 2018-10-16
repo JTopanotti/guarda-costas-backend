@@ -24,7 +24,7 @@ module.exports = function(){
   });
   //var home = require('../app/routes/home');
 
-  app.set('port', 3001);
+  app.set('port', process.env.PORT || 3001);
   //app.set('view engine', 'ejs');
   //app.set('views', './app/views');
 
