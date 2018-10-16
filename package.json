@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JTopanotti/guarda-costas-backend#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^7.5.0"
   }
 }
