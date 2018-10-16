@@ -6,7 +6,7 @@ module.exports = function(){
 
   app.set('port', process.env.PORT || 3001);
 
-  var cliente = require("../app/controllers/cliente");
+  var cliente = require("../app/routes/cliente");
   app.use('/cliente', cliente);
 
   //app.use(express.static('./public'));
