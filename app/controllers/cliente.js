@@ -7,7 +7,7 @@ const pool = new Pool({
   ssl: true
 });
 
-router.get("/list", (req, res) => {
+router.get("/list", async (req, res) => {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM usuarios');
