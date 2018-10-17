@@ -6,7 +6,7 @@ module.exports = function(){
 
   app.set('port', process.env.PORT || 3001);
 
-  var cliente = require("../app/routes/cliente");
+  var clientRouter = require("../app/routes/client");
 
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
@@ -15,7 +15,7 @@ module.exports = function(){
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
   });
-  app.use('/cliente', cliente);
+  app.use('/client', clientRouter);
 
   //app.use(express.static('./public'));
   //app.use(bodyParser.urlencoded({extended: true}));
