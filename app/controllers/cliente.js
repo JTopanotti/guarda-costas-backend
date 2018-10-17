@@ -9,7 +9,7 @@ module.exports.listUsuarios = async (req, res) => {
      const client = await pool.connect();
      const result = await client.query('SELECT * FROM usuarios');
      const results = {'results ': (result) ? result.rows : null};
-     res.send(JSON.stringify({'results':results});
+     res.send(JSON.stringify({'results':results}));
      client.release();
   } catch (err){
      console.error(err);
