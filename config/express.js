@@ -7,6 +7,14 @@ module.exports = function(){
   app.set('port', process.env.PORT || 3001);
 
   var cliente = require("../app/routes/cliente");
+
+  app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+  });
   app.use('/cliente', cliente);
 
   //app.use(express.static('./public'));
