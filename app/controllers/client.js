@@ -13,6 +13,8 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
 module.exports.listClients = async (req, res) => {
 
+  console.log("Got here");
+
   sequelize.authenticate().then(() => {
     console.log("Sequelize auth successful");
   }).catch(() => {
