@@ -18,9 +18,6 @@ module.exports = function(){
   app.use('/client', clientRouter);
 
   //app.use(express.static('./public'));
-  //app.use(bodyParser.urlencoded({extended: true}));
-  //app.use(bodyParser.json());
-  //app.use(require('method-override')());
 
   return app;
 };
