@@ -15,7 +15,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 module.exports.listClients = async (req, res) => {
 
   console.log(Usuarios);
-  res.status(200);
+  res.status(200).send("OK");
 
   // sequelize.authenticate().then(() => {
   //   console.log("Sequelize auth successful");
