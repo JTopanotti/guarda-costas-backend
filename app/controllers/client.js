@@ -1,16 +1,21 @@
 const { Pool } = require('pg');
+const Sequelize = require('sequelize');
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: true
 });
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres"
+});
+
 
 
 module.exports.listClients = async (req, res) => {
 
   console.log("Got here");
 
-  process.env.SEQUELIZE.authenticate().then(() => {
+  sequelize.authenticate().then(() => {
     console.log("Sequelize auth successful");
   }).catch(() => {
     console.log("Sequelize auth error");
