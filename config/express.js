@@ -1,5 +1,10 @@
 var express = require('express');
 //var bodyParser = require('body-parser');
+const Sequelize = require('sequelize');
+
+process.env.SEQUELIZE = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres"
+});
 
 module.exports = function(){
   var app = express();
