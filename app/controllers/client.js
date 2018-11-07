@@ -12,10 +12,15 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
 
 
-module.exports.listClients = async (req, res) => {
+module.exports.listClients = (req, res) => {
 
-  console.log(Usuarios);
-  res.status(200).json(Usuarios);
+  Usuarios.findAll().then(usuarios => {
+      res.status(200).json(usuarios);
+  }).catch(() => {
+    res.status(404).send("Error");
+  });
+
+
 
   // sequelize.authenticate().then(() => {
   //   console.log("Sequelize auth successful");
